@@ -1,0 +1,76 @@
+{
+  "environ": {
+        "load_from": "None",
+        "gpus_per_model": 1,
+        "num_workers": 1,
+        "data_dir": "./data_dir",
+        "model_dir": "./models",
+        "img_dir": "./img_dir",
+        "study_name": "resnet18_mixup_tune",
+        "num_gpus": 1,
+        "n_trials": 20
+  },
+  "hps":{
+    "num_epochs": 100,
+    "loss_func": "CrossEntropyLossFlat",
+    "scheduler": "CosineAnnealing",
+    "num_classes": 2,
+    "max_rotate": 10,
+    "max_zoom":1.5,
+    "p_affine": 0.8,
+    "min_scale": 0.75,
+    "batch_image_resize": 224,
+    "image_size": 512,
+    "patience": 25,
+    "arch": {
+      "type": "CNN",
+      "backbone": "resnet18",
+      "head": [4096,4096]
+    },
+    "opt": "Adam"
+  },
+  "tune": {
+    "batch_size": {
+      "dist": "suggest_int",
+      "vals":{
+        "name": "batch_size",
+        "min": 8,
+        "max": 64,
+        "step": 8
+      }
+    },
+    "freeze_epochs":{
+      "dist": "suggest_int",
+      "vals": {
+        "name": "freeze_epochs",
+        "min": 0,
+        "max": 25,
+        "step": 5
+      }
+    },
+    "weight_decay":{
+      "dist": "suggest_loguniform",
+      "vals": {
+        "name": "wd",
+        "min": 1e-05, 
+        "max": 1e-01
+      }
+    },
+    "lr":{
+      "dist": "suggest_loguniform",
+      "vals": {
+        "name": "lr",
+        "min": 1e-05,
+        "max": 1e-01
+      }
+    },
+    "momentum":{
+      "dist": "suggest_float",
+      "vals": {
+        "name": "moms",
+        "min": 0.800,
+        "max": 0.999
+      }
+    }
+  }
+}
