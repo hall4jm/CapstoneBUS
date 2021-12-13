@@ -1,5 +1,5 @@
 # CapstoneBUS
-Trains and optimize CNN architectures for classification on BUS images.
+Trains and optimize CNN architectures for classification on breast ultrasound (BUS) images.
 
 This code is from Justin Hall's Capstone paper. The python scripts can be run from the Python console or a Jupyter notebook. 
 
