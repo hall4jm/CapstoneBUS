@@ -26,3 +26,20 @@ Diagnosis, 2021). Another common alternative is the use of ultrasound imaging. B
 ultrasounds offer a non-radioactive imaging technique, allowing for a safe and non-invasive way 
 to assess any conspicuous masses and limiting the need for unnecessary surgery or invasive 
 procedures such as a biopsy.
+
+## BUS Interpretation
+The Breast Imaging Reporting and Data System (BI-RADS) provide a standardized way 
+for radiologists to describe breast lesions found in BUS images. This standardization aims to 
+improve the quality of the assessment, improving patient care. The system defines seven levels 
+of ranking 0 – 6, where a higher score reflects an increased likelihood of malignancy. The 
+probability of malignancy for each score is shown in Table 1 below (Mendelson et al., 2013): 
+Table 1 
+BI-RADS Score and Probability of Malignancy 
+Score Classification Probability of Malignancy 
+0 Incomplete N/A 
+1 Negative 0% 
+2 Benign 0% 
+3 Probably Benign <2% 
+4 Suspicious for Malignancy 2-94% 
+5 Highly Suggestive of Malignancy >95% 
+6 Known Malignancy 100% 
