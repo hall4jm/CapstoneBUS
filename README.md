@@ -56,7 +56,7 @@ successful, could help to better patient care and reduce medical costs in a clin
 
 # Methodology
 
-## Data Augmentations
+### Data Augmentations
 
 A common problem with deep learning architectures is their ability to memorize instead 
 of "learning," making them unable to generalize to new data. With the small amount of training 
@@ -82,11 +82,17 @@ knowledge to apply relevant transformations. According to Zhang et al., this dat
 is also very powerful when the labels are not entirely accurate. This was extremely important for 
 our BUS images since many of the images have been classified by a human, which we know are 
 prone to errors. 
-To perform mixup, we generate a new image by randomly selecting two images, 𝑥௜
-, and 
-𝑥௝
-, and their labels, 𝑦௜
-, and 𝑦௝,
- which have been encoded, in our case 0 for benign and 1 for 
-malignant. These images and labels are then combined linearly based on a randomly chosen 
-weight, λ. Figure 5 shows how the new images, 𝑥ො, and labels, 𝑦, ෝ are generated: 
+
+### Models
+
+Model	Number of Parameters (millions)	Depth	Approx. Size (MB)
+VGG-16 	15.25	16	528
+VGG-19 	20.56	19	549
+ResNet-18	11.70	18	44
+ResNet-34	21.83	34	83
+ResNet-50	25.62	50	98
+ResNet-101	44.61	101	171
+ResNet-152	60.25	152	232
+DenseNet-121	8.00	121	31
+DenseNet-169	14.20	169	55
+DenseNet-201	20.07	201	77
