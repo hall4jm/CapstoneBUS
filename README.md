@@ -56,5 +56,37 @@ successful, could help to better patient care and reduce medical costs in a clin
 
 # Methodology
 
-## 
+## Data Augmentations
 
+A common problem with deep learning architectures is their ability to memorize instead 
+of "learning," making them unable to generalize to new data. With the small amount of training 
+data, it became essential to incorporate techniques to reduce overfitting. By randomly selecting 
+images during each training step to be altered via rotations, reflections, added noise, Etc., we can 
+help the models become more robust. We implemented two different augmentation strategies to 
+help avoid overfitting on our BUS images. 
+
+The first augmentation strategy uses geometric transformations, image resizing, and 
+zooming. The geometric transformations used on our dataset could not be chosen without some 
+considerations. Depending on the transformations applied, the final classification may be altered, 
+or the image may no longer make sense in the domain of BUS images. For example, BUS 
+images are taken with the layer of skin towards the top and bone or deep tissue towards the 
+bottom. If we were to flip the image vertically, we would be introducing a transformation that 
+may not be appropriate where the skin was shown beneath bone and dense tissue. Therefore, we 
+have limited transformations only to introduce some image rotation by a slight angle, less than 
+ten degrees in either direction, zooming the image up to 1.5x magnification, and randomly 
+cropping the image to 224×224 pixels
+
+The second data augmentation method utilized was mixup (Zhang et al., 2017). This 
+method is a data-agnostic approach to augmentation and does not suffer from relying on domain 
+knowledge to apply relevant transformations. According to Zhang et al., this data augmentation 
+is also very powerful when the labels are not entirely accurate. This was extremely important for 
+our BUS images since many of the images have been classified by a human, which we know are 
+prone to errors. 
+To perform mixup, we generate a new image by randomly selecting two images, 𝑥௜
+, and 
+𝑥௝
+, and their labels, 𝑦௜
+, and 𝑦௝,
+ which have been encoded, in our case 0 for benign and 1 for 
+malignant. These images and labels are then combined linearly based on a randomly chosen 
+weight, λ. Figure 5 shows how the new images, 𝑥ො, and labels, 𝑦, ෝ are generated: 
