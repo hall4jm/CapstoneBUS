@@ -5,7 +5,7 @@ The script also performs hyperparameter tuning using Tree-structured Parzen Esti
 
 The python scripts can be run from the Python console or a Jupyter notebook. 
 
-## Example 
+### Example 
 
 The model and hyperparameter tuning options are stored in a JSON file and passed to the Python console along with the training script.
 
@@ -27,19 +27,34 @@ ultrasounds offer a non-radioactive imaging technique, allowing for a safe and n
 to assess any conspicuous masses and limiting the need for unnecessary surgery or invasive 
 procedures such as a biopsy.
 
-## BUS Interpretation
-The Breast Imaging Reporting and Data System (BI-RADS) provide a standardized way 
-for radiologists to describe breast lesions found in BUS images. This standardization aims to 
-improve the quality of the assessment, improving patient care. The system defines seven levels 
-of ranking 0 – 6, where a higher score reflects an increased likelihood of malignancy. The 
-probability of malignancy for each score is shown in Table 1 below (Mendelson et al., 2013): 
-Table 1 
-BI-RADS Score and Probability of Malignancy 
-Score Classification Probability of Malignancy 
-0 Incomplete N/A 
-1 Negative 0% 
-2 Benign 0% 
-3 Probably Benign <2% 
-4 Suspicious for Malignancy 2-94% 
-5 Highly Suggestive of Malignancy >95% 
-6 Known Malignancy 100% 
+### BUS Interpretation
+Advancements in medical imaging have greatly improved the level of diagnostics that 
+can be recorded. These advancements allow radiologists to get a detailed view of breast tissues 
+and vascularity, allowing for more accurate diagnoses and better patient care. Despite these 
+developments, the interpretations of breast ultrasounds still rely heavily on the experience and 
+judgment of radiologists to define characteristics found in the images. Many features described 
+in the BI-RAD assessment can be found in benign and malignant lesions. The subjectivity of 
+these characteristics can lead to wildly varying assessments across radiologists.
+
+Because BUS images are often a determining factor for the need for a biopsy, low 
+sensitivity in identifying malignant lesions results in unnecessary procedures. The user-reliant 
+classification of BUS imaging results in non-uniform patient care. Studies show the percentage of positive breast ultrasound biopsies varies as 
+much as 51%. For many patients, this means unnecessary invasive procedures and increased 
+medical costs. 
+
+Many academic studies have shown the success of deep learning algorithms to 
+assist in classifying and detecting disease in medical images. Still, these algorithms have not 
+done well to generalize to a clinical setting. This study aims to create a state-of-the-art computer aided diagnosis (CAD) system to create a more standardized approach to assessing BUS images and assigning a diagnosis.
+
+### Significance 
+Many existing studies have been performed on publicly available BUS imaging datasets. 
+These studies have taken various approaches, including many different machine learning 
+algorithms, showing great success on these datasets. However, very few of these systems have 
+been implemented in a clinical setting. This CAD system will be unique in its blend of deep 
+learning and expert human knowledge trained for a specific patient population. This system, if 
+successful, could help to better patient care and reduce medical costs in a clinical setting.
+
+# Methodology
+
+## 
+
