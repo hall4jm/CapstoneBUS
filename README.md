@@ -18,7 +18,8 @@ other form of cancer (Breast cancer now most common form of cancer: WHO taking a
 2021, resulting in over 43,000 deaths (U.S. Breast Cancer Statistics, 2021). A critical factor in 
 reducing the number of mortalities is ensuring that potentially life-threatening lesions are found 
 early (Sun et al., 2017). By finding these lesions early, patients have access to more treatment 
-options when they are most effective. 
+options when they are most effective.
+
 To aid in early detection, doctors recommend regular mammograms or physical 
 examinations to help identify abnormalities in breast tissue (Breast Cancer Early Detection and 
 Diagnosis, 2021). Another common alternative is the use of ultrasound imaging. Breast 
