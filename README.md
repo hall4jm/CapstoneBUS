@@ -127,3 +127,5 @@ a given image, using perturbations in the localized area of the image to see how
 the probability associated with a classification. The areas of most importance are then found 
 using linear models such as weighted linear regression (Ribeiro et al., 2016).
 
+![image](https://user-images.githubusercontent.com/46795053/152703675-a13a24b9-3548-4356-9ffa-e0c0a9811605.png)
+
