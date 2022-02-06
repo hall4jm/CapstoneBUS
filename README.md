@@ -117,3 +117,13 @@ but the 1-cycle policy performs well as a universal scheduler and greatly reduce
 The 1-cycle policy works by increasing the learning rate from the starting learning rate to a 
 maximum learning rate and then lowering it again to zero over one cycle, typically chosen to be 
 slightly less than the total training epochs.
+
+# Model Interpretation
+When making a classification dealing with patient outcomes, radiologists must trust the 
+models' classification. Deep learning architectures often operate as black boxes, making it hard 
+to interpret why the classifications were made. To help interpret these models, we implemented 
+local interpretable model-agnostic explanations (LIME). LIME creates synthesized images from 
+a given image, using perturbations in the localized area of the image to see how that area affects 
+the probability associated with a classification. The areas of most importance are then found 
+using linear models such as weighted linear regression (Ribeiro et al., 2016).
+
