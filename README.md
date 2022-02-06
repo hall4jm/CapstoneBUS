@@ -46,14 +46,6 @@ Many academic studies have shown the success of deep learning algorithms to
 assist in classifying and detecting disease in medical images. Still, these algorithms have not 
 done well to generalize to a clinical setting. This study aims to create a state-of-the-art computer aided diagnosis (CAD) system to create a more standardized approach to assessing BUS images and assigning a diagnosis.
 
-### Significance 
-Many existing studies have been performed on publicly available BUS imaging datasets. 
-These studies have taken various approaches, including many different machine learning 
-algorithms, showing great success on these datasets. However, very few of these systems have 
-been implemented in a clinical setting. This CAD system will be unique in its blend of deep 
-learning and expert human knowledge trained for a specific patient population. This system, if 
-successful, could help to better patient care and reduce medical costs in a clinical setting.
-
 # Methodology
 
 ### Data Augmentations
@@ -86,3 +78,42 @@ prone to errors.
 ### Models
 ![image](https://user-images.githubusercontent.com/46795053/152703177-3459d9ca-f3d8-46c5-8f63-7f9e197b95f9.png)
 
+### Transfer Learning
+Starting from an initial randomized point for our models can result in inconsistent 
+training times and performance. Instead, we can choose to use starting parameters for our model 
+from pre-trained models. This method known as transfer learning uses the model weights and 
+biases from a model trained on a different task and utilizes them as an initial starting point for 
+our problem. We began our training with the weights and biases for the models trained 
+on the ImageNet dataset.
+
+Each model's final fully connected layer was removed since it was trained to output 
+classifications for a separate task. A new fully connected layer with two outputs, known as the 
+head of the model for our binary classification problem, was added. Because the initial weights 
+for this layer must be randomized, we began training by freezing the entire model, except for this 
+layer. Frozen layers of a model cannot be updated during training. By leaving the head unfrozen 
+this ensured only the weights and biases for the new classification layer were updated during the 
+beginning of training. After updating this layer for the set number of epochs, the entire model 
+was unfrozen, and all layers were updated during the rest of the training. 
+
+### Discriminative Learning Rates
+The early layers of our model will be used to detect simple features in our images, such 
+as edges, curves, and corners. These simple features are present in almost all images. Because 
+these layers will begin training with their pre-trained weights, they should require little change. 
+However, as we move deeper through the network layers, the model parameters will require 
+more change to reach an optimal solution because the complex features found for ImageNet will 
+be much different from those for BUS classification. Therefore, it does not seem reasonable that 
+all layers should be trained at the same learning rate. We used discriminative learning, which sets 
+a different learning rate for different depths of our networks. This ensures that our deeper layers 
+and our new head train much faster than the early layers, which should only require minor 
+updates. Ultimately, this should reduce our training time as the model learns the features 
+important to BUS classification more quickly. 
+
+### Scheduler
+It is often the case that the initial learning rate is not optimal throughout all the training. 
+For example, we may find a local minimum in our loss function, and our learning rate may not 
+allow us to leave this local area of our loss function. For our models, we implement cosine 
+annealing, following the 1-cycle policy defined by Smith (2018). Many other schedulers exist, 
+but the 1-cycle policy performs well as a universal scheduler and greatly reduces training time. 
+The 1-cycle policy works by increasing the learning rate from the starting learning rate to a 
+maximum learning rate and then lowering it again to zero over one cycle, typically chosen to be 
+slightly less than the total training epochs.
