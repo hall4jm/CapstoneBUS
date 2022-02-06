@@ -84,15 +84,5 @@ our BUS images since many of the images have been classified by a human, which w
 prone to errors. 
 
 ### Models
+![image](https://user-images.githubusercontent.com/46795053/152703177-3459d9ca-f3d8-46c5-8f63-7f9e197b95f9.png)
 
-Model	Number of Parameters (millions)	Depth	Approx. Size (MB)
-VGG-16 	15.25	16	528
-VGG-19 	20.56	19	549
-ResNet-18	11.70	18	44
-ResNet-34	21.83	34	83
-ResNet-50	25.62	50	98
-ResNet-101	44.61	101	171
-ResNet-152	60.25	152	232
-DenseNet-121	8.00	121	31
-DenseNet-169	14.20	169	55
-DenseNet-201	20.07	201	77
