@@ -9,7 +9,7 @@ The python scripts can be run from the Python console or a Jupyter notebook.
 
 The model and hyperparameter tuning options are stored in a JSON file and passed to the Python console along with the training script.
 
-![image](https://user-images.githubusercontent.com/46795053/145736141-c80eac5c-38f1-47d8-8f82-b6636ceaa6bc.png)
+![image](https://user-images.githubusercontent.com/46795053/152913457-7660bd64-9e49-42c6-8b93-b643cb64deae.png)
 
 # Background 
 According to a recent study, breast cancer now affects more people globally than any 
